@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eclipse Bot - Discord Bot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --space-purple: #2b0a3d;
+      --neon-purple: #a855f7;
+      --neon-blue: #6366f1;
+      --text-light: #e0e0e0;
+      --card-bg: rgba(255, 255, 255, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0f0f1a;
+      color: var(--text-light);
+      overflow-x: hidden;
+    }
+
+    /* Star background */
+    body::before {
+      content: '';
+      position: fixed;
+      width: 200%;
+      height: 200%;
+      background: url('https://i.imgur.com/7b1zY8Q.png') repeat;
+      animation: moveStars 120s linear infinite;
+      z-index: -2;
+      opacity: 0.1;
+    }
+
+    @keyframes moveStars {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(-500px, -500px);
+      }
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: var(--neon-purple);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    /* Animated bot icon */
+    .bot-icon {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 30px;
+      animation: pulse 3s infinite ease-in-out;
+      border-radius: 50%;
+      box-shadow: 0 0 15px var(--neon-purple);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 15px var(--neon-purple); }
+      50% { transform: scale(1.05); box-shadow: 0 0 30px var(--neon-blue); }
+      100% { transform: scale(1); box-shadow: 0 0 15px var(--neon-purple); }
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      margin: 10px;
+      border: 2px solid var(--neon-purple);
+      color: var(--neon-purple);
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      background: transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--neon-purple);
+      z-index: 0;
+      transition: left 0.3s ease;
+    }
+
+    .btn:hover::before {
+      left: 0;
+    }
+
+    .btn:hover {
+      color: #fff;
+    }
+
+    .btn span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 60px 20px;
+      background-color: #1a1a2e;
+    }
+
+    .feature-card {
+      width: 280px;
+      margin: 20px;
+      padding: 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--neon-purple);
+      border-radius: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
+    }
+
+    .feature-card h3 {
+      color: var(--neon-blue);
+      margin-bottom: 10px;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .feature-card {
+        width: 90%;
+      }
+
+      .bot-icon {
+        width: 90px;
+        height: 90px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <img src="https://i.imgur.com/GscZjjJ.png" alt="Bot Icon" class="bot-icon"> <!-- Sostituisci con il tuo logo -->
+    <h1>Eclipse Bot</h1>
+    <p>Your ultimate interstellar assistant for managing Discord like a space captain.</p>
+    <a href="https://discord.com/oauth2/authorize?client_id=YOUR_BOT_ID&scope=bot&permissions=YOUR_PERMS" class="btn"><span>Invite to Server</span></a>
+    <a href="https://discord.gg/YOUR_SERVER" class="btn"><span>Join Support Server</span></a>
+  </div>
+
+  <div class="features">
+    <div class="feature-card">
+      <h3>⚙️ Auto Moderation</h3>
+      <p>Keep your server clean and safe with customizable auto-moderation tools.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>🎵 Music Commands</h3>
+      <p>Play music from YouTube and more, with high quality audio streaming.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>🎉 Giveaways</h3>
+      <p>Launch beautiful giveaways with timers, reactions, and fair winners.</p>
+    </div>
+  </div>
+
+</body>
+</html>
